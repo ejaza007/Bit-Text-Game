@@ -1,4 +1,8 @@
+//
+// Created by Armaghan Ejaz on 9/24/23.
+//
 #include <stdio.h>
+#include <stdlib.h>
 #include "bit_manip.h"
 
 
@@ -9,10 +13,65 @@ int carryFish [4] = {0,0,0,0};
 
 int main() {
 
-    int *test = getFish(rooms[6]);
 
-    // Iterate through the array and print each element
-    for (int i = 0; i < 4 ; i++) {
-        printf("%d ", test[i]);
+    int currentRoomIndex = 7;
+
+    while (1) {
+        unsigned short currentRoomData = rooms[currentRoomIndex];
+
+        printf("Room Number: %d\n", getRoomNumber(currentRoomData));
+
+        int *accessibleRooms = getRooms(currentRoomData);
+
+        accessibleRooms[0] = 0;
+        accessibleRooms[1] = 0;
+        accessibleRooms[2] = 0;
+        accessibleRooms[3] = 0;
+        accessibleRooms[4] = 0;
+        accessibleRooms[5] = 0;
+        accessibleRooms[6] = 0;
+        accessibleRooms[0] = 0;
+
+        accessibleRooms = getRooms(currentRoomData);
+
+
+
+
+        printf("Accessible Rooms:\n");
+
+        int numAccessibleRooms = 0; // Count of accessible rooms
+
+        for (int i = 0; i < 8; i++) {
+            if (accessibleRooms[i] != 0) {
+                printf("Go to Room %d\n", accessibleRooms[i]);
+                numAccessibleRooms++;
+            }
+        }
+
+
+        printf("Enter the room number to go to (0 to quit): ");
+        int choice;
+        scanf("%d", &choice);
+
+        //if (choice == 0) {
+        //  break;  // Exit the loop if the user chooses to quit
+        //} else {
+        // Check if the chosen room is accessible
+        int validChoice = 0;
+        //free(accessibleRooms);
+        for (int i = 0; i < 8; i++) {
+            if (accessibleRooms[i] == choice) {
+                currentRoomIndex = choice;
+                validChoice = 1;
+                break;
+            }
+        }
+
+
+
+        if (!validChoice) {
+            printf("Invalid choice. Please select a valid room or enter 0 to quit.\n");
+        }
     }
 }
+

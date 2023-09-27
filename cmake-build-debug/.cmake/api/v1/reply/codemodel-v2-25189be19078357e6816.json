@@ -15,7 +15,8 @@
 					"source" : ".",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						1
 					]
 				}
 			],
@@ -30,7 +31,8 @@
 					"name" : "CS203_Lab3",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						1
 					]
 				}
 			],
@@ -41,6 +43,13 @@
 					"id" : "CS203_Lab3::@6890427a1f51a3e7e1df",
 					"jsonFile" : "target-CS203_Lab3-Debug-749f3c7850020d526b0e.json",
 					"name" : "CS203_Lab3",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_bitmanip::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_bitmanip-Debug-dc4cdb26352c766e938d.json",
+					"name" : "test_bitmanip",
 					"projectIndex" : 0
 				}
 			]

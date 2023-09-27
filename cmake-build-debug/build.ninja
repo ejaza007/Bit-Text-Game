@@ -77,6 +77,43 @@ build CS203_Lab3: C_EXECUTABLE_LINKER__CS203_Lab3_Debug CMakeFiles/CS203_Lab3.di
   TARGET_FILE = CS203_Lab3
   TARGET_PDB = CS203_Lab3.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target test_bitmanip
+
+
+#############################################
+# Order-only phony target for test_bitmanip
+
+build cmake_object_order_depends_target_test_bitmanip: phony || CMakeFiles/test_bitmanip.dir
+
+build CMakeFiles/test_bitmanip.dir/bit_manip.c.o: C_COMPILER__test_bitmanip_unscanned_Debug /Users/armaghanejaz/CLionProjects/CS203_Lab3/bit_manip.c || cmake_object_order_depends_target_test_bitmanip
+  DEP_FILE = CMakeFiles/test_bitmanip.dir/bit_manip.c.o.d
+  FLAGS = -g -std=gnu11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -mmacosx-version-min=12.2 -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/test_bitmanip.dir
+  OBJECT_FILE_DIR = CMakeFiles/test_bitmanip.dir
+
+build CMakeFiles/test_bitmanip.dir/test_bitmanip.c.o: C_COMPILER__test_bitmanip_unscanned_Debug /Users/armaghanejaz/CLionProjects/CS203_Lab3/test_bitmanip.c || cmake_object_order_depends_target_test_bitmanip
+  DEP_FILE = CMakeFiles/test_bitmanip.dir/test_bitmanip.c.o.d
+  FLAGS = -g -std=gnu11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -mmacosx-version-min=12.2 -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/test_bitmanip.dir
+  OBJECT_FILE_DIR = CMakeFiles/test_bitmanip.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target test_bitmanip
+
+
+#############################################
+# Link the executable test_bitmanip
+
+build test_bitmanip: C_EXECUTABLE_LINKER__test_bitmanip_Debug CMakeFiles/test_bitmanip.dir/bit_manip.c.o CMakeFiles/test_bitmanip.dir/test_bitmanip.c.o
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -mmacosx-version-min=12.2
+  OBJECT_DIR = CMakeFiles/test_bitmanip.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = test_bitmanip
+  TARGET_PDB = test_bitmanip.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -111,7 +148,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Folder: /Users/armaghanejaz/CLionProjects/CS203_Lab3/cmake-build-debug
 
-build all: phony CS203_Lab3
+build all: phony CS203_Lab3 test_bitmanip
 
 # =============================================================================
 # Built-in targets

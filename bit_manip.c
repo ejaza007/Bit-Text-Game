@@ -2,15 +2,16 @@
 // Created by Armaghan Ejaz on 9/24/23.
 //
 
+#include <stdlib.h>
 #include "bit_manip.h"
-
-
 
 int getRoomNumber(unsigned short roomData) {
     return (roomData >> 8) & 0x7;
 }
 
-int* getRooms(unsigned short roomData) {
+
+
+int *getRooms(unsigned short roomData) {
     static int moveRooms[8];
     int numRoom = 0;
 
@@ -35,10 +36,9 @@ int checkWin(unsigned short roomData){
 int* getFish (unsigned short roomData){
 
     static int fish[4];
-    // Shift right to get rid of bits 0-11
     roomData >>= 12;
 
-    // Use a mask to extract the 4 bits (15-12)
+
     for (int i = 0; i < 4; i++) {
         fish[i] = roomData & 1;
         roomData >>= 1;
@@ -47,6 +47,73 @@ int* getFish (unsigned short roomData){
     return fish;
 
 }
+
+unsigned short putDownOneFish(unsigned short roomData){
+
+    unsigned short bitmask = 0x1000;
+    fishArr[0] = 0;
+
+    // Use bitwise OR to add 1 to the 12th bit
+    return roomData | bitmask;
+
+
+
+
+}
+
+unsigned short putDownTwoFish(unsigned short roomData){
+
+    unsigned short bitmask = 0x2000;
+    fishArr[1] = 0;
+
+    // Use bitwise OR to add 1 to the 12th bit
+   return roomData | bitmask;
+}
+
+unsigned short putDownBlueFish(unsigned short roomData){
+
+    unsigned short bitmask = 0x4000;
+    fishArr[2] = 0;
+
+     return roomData | bitmask;
+}
+
+unsigned short putDownRedFish(unsigned short roomData) {
+    unsigned short bitmask = 0x8000;
+
+    fishArr[3] = 0;
+    return roomData | bitmask;
+}
+
+unsigned short pickUpOneFish(unsigned short roomData){
+    unsigned short bitmask = 0x7FFF;
+    fishArr[3] = 1;
+    return roomData & bitmask;
+
+}
+
+unsigned short pickUpTwoFish(unsigned short roomData){
+    unsigned short bitmask = 0xBFFF;
+    fishArr[2] = 1;
+    return roomData & bitmask;
+
+}
+
+unsigned short pickUpBlueFish(unsigned short roomData){
+    unsigned short bitmask = 0xDFFF;
+    fishArr[1] = 1;
+    return roomData & bitmask;
+
+}
+
+unsigned short pickUpRedFish(unsigned short roomData){
+    unsigned short bitmask = 0xEFFF;
+    fishArr[0] = 1;
+    return roomData & bitmask;
+
+}
+
+
 
 
 
