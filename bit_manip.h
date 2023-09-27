@@ -9,7 +9,6 @@
 
 extern unsigned short rooms [8];
 extern int carryFish [4];
-int fishArr[4];
 int getRoomNumber(unsigned short roomData);
 int* getRooms(unsigned short roomData);
 int checkWin(unsigned short roomData);

@@ -25,10 +25,6 @@ int main() {
 
 
 
-
-
-
-
     // Test cases for checkWin function
     assert(checkWin(0xF800) == 1);
     assert(checkWin(0x0F00) == 0);
